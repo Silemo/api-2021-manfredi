@@ -1,0 +1,3 @@
+/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir

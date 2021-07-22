@@ -1,0 +1,1 @@
+/usr/bin/gcc -g   CMakeFiles/ProjectAPI.dir/main.c.o  -o ProjectAPI 
