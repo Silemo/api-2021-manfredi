@@ -3,4 +3,4 @@ project(ProjectAPI C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(ProjectAPI main.c)
+add_executable(ProjectAPI capture.c capture_matrix.c dijkstra_matrix.c heap.c)

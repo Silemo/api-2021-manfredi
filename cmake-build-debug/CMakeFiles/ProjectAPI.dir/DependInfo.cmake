@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/main.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/main.c.o"
+  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture.c.o"
+  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture_matrix.c.o"
+  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o"
+  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/heap.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

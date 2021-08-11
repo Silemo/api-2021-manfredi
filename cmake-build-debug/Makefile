@@ -123,32 +123,113 @@ ProjectAPI/fast:
 	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/build
 .PHONY : ProjectAPI/fast
 
-main.o: main.c.o
+capture.o: capture.c.o
 
-.PHONY : main.o
+.PHONY : capture.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/main.c.o
-.PHONY : main.c.o
+capture.c.o:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture.c.o
+.PHONY : capture.c.o
 
-main.i: main.c.i
+capture.i: capture.c.i
 
-.PHONY : main.i
+.PHONY : capture.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/main.c.i
-.PHONY : main.c.i
+capture.c.i:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture.c.i
+.PHONY : capture.c.i
 
-main.s: main.c.s
+capture.s: capture.c.s
 
-.PHONY : main.s
+.PHONY : capture.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/main.c.s
-.PHONY : main.c.s
+capture.c.s:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture.c.s
+.PHONY : capture.c.s
+
+capture_matrix.o: capture_matrix.c.o
+
+.PHONY : capture_matrix.o
+
+# target to build an object file
+capture_matrix.c.o:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture_matrix.c.o
+.PHONY : capture_matrix.c.o
+
+capture_matrix.i: capture_matrix.c.i
+
+.PHONY : capture_matrix.i
+
+# target to preprocess a source file
+capture_matrix.c.i:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture_matrix.c.i
+.PHONY : capture_matrix.c.i
+
+capture_matrix.s: capture_matrix.c.s
+
+.PHONY : capture_matrix.s
+
+# target to generate assembly for a file
+capture_matrix.c.s:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/capture_matrix.c.s
+.PHONY : capture_matrix.c.s
+
+dijkstra_matrix.o: dijkstra_matrix.c.o
+
+.PHONY : dijkstra_matrix.o
+
+# target to build an object file
+dijkstra_matrix.c.o:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o
+.PHONY : dijkstra_matrix.c.o
+
+dijkstra_matrix.i: dijkstra_matrix.c.i
+
+.PHONY : dijkstra_matrix.i
+
+# target to preprocess a source file
+dijkstra_matrix.c.i:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.i
+.PHONY : dijkstra_matrix.c.i
+
+dijkstra_matrix.s: dijkstra_matrix.c.s
+
+.PHONY : dijkstra_matrix.s
+
+# target to generate assembly for a file
+dijkstra_matrix.c.s:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.s
+.PHONY : dijkstra_matrix.c.s
+
+heap.o: heap.c.o
+
+.PHONY : heap.o
+
+# target to build an object file
+heap.c.o:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/heap.c.o
+.PHONY : heap.c.o
+
+heap.i: heap.c.i
+
+.PHONY : heap.i
+
+# target to preprocess a source file
+heap.c.i:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/heap.c.i
+.PHONY : heap.c.i
+
+heap.s: heap.c.s
+
+.PHONY : heap.s
+
+# target to generate assembly for a file
+heap.c.s:
+	$(MAKE) -f CMakeFiles/ProjectAPI.dir/build.make CMakeFiles/ProjectAPI.dir/heap.c.s
+.PHONY : heap.c.s
 
 # Help Target
 help:
@@ -159,9 +240,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ProjectAPI"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... capture.o"
+	@echo "... capture.i"
+	@echo "... capture.s"
+	@echo "... capture_matrix.o"
+	@echo "... capture_matrix.i"
+	@echo "... capture_matrix.s"
+	@echo "... dijkstra_matrix.o"
+	@echo "... dijkstra_matrix.i"
+	@echo "... dijkstra_matrix.s"
+	@echo "... heap.o"
+	@echo "... heap.i"
+	@echo "... heap.s"
 .PHONY : help
 
 

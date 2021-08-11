@@ -76,7 +76,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/main.c">
+		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c">
+			<Option target="ProjectAPI"/>
+		</Unit>
+		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c">
+			<Option target="ProjectAPI"/>
+		</Unit>
+		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c">
+			<Option target="ProjectAPI"/>
+		</Unit>
+		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c">
 			<Option target="ProjectAPI"/>
 		</Unit>
 		<Unit filename="/mnt/d/Giovanni/MyRepositories/ProjectAPI/CMakeLists.txt">

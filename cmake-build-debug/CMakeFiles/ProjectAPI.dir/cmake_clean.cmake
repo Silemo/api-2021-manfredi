@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ProjectAPI.dir/main.c.o"
+  "CMakeFiles/ProjectAPI.dir/capture.c.o"
+  "CMakeFiles/ProjectAPI.dir/capture_matrix.c.o"
+  "CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o"
+  "CMakeFiles/ProjectAPI.dir/heap.c.o"
   "ProjectAPI"
   "ProjectAPI.pdb"
 )

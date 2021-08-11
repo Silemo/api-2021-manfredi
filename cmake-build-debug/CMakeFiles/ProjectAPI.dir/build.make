@@ -57,30 +57,75 @@ include CMakeFiles/ProjectAPI.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ProjectAPI.dir/flags.make
 
-CMakeFiles/ProjectAPI.dir/main.c.o: CMakeFiles/ProjectAPI.dir/flags.make
-CMakeFiles/ProjectAPI.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ProjectAPI.dir/main.c.o"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjectAPI.dir/main.c.o   -c /mnt/d/Giovanni/MyRepositories/ProjectAPI/main.c
+CMakeFiles/ProjectAPI.dir/capture.c.o: CMakeFiles/ProjectAPI.dir/flags.make
+CMakeFiles/ProjectAPI.dir/capture.c.o: ../capture.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ProjectAPI.dir/capture.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjectAPI.dir/capture.c.o   -c /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c
 
-CMakeFiles/ProjectAPI.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjectAPI.dir/main.c.i"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Giovanni/MyRepositories/ProjectAPI/main.c > CMakeFiles/ProjectAPI.dir/main.c.i
+CMakeFiles/ProjectAPI.dir/capture.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjectAPI.dir/capture.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c > CMakeFiles/ProjectAPI.dir/capture.c.i
 
-CMakeFiles/ProjectAPI.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjectAPI.dir/main.c.s"
-	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Giovanni/MyRepositories/ProjectAPI/main.c -o CMakeFiles/ProjectAPI.dir/main.c.s
+CMakeFiles/ProjectAPI.dir/capture.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjectAPI.dir/capture.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c -o CMakeFiles/ProjectAPI.dir/capture.c.s
+
+CMakeFiles/ProjectAPI.dir/capture_matrix.c.o: CMakeFiles/ProjectAPI.dir/flags.make
+CMakeFiles/ProjectAPI.dir/capture_matrix.c.o: ../capture_matrix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ProjectAPI.dir/capture_matrix.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjectAPI.dir/capture_matrix.c.o   -c /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c
+
+CMakeFiles/ProjectAPI.dir/capture_matrix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjectAPI.dir/capture_matrix.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c > CMakeFiles/ProjectAPI.dir/capture_matrix.c.i
+
+CMakeFiles/ProjectAPI.dir/capture_matrix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjectAPI.dir/capture_matrix.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c -o CMakeFiles/ProjectAPI.dir/capture_matrix.c.s
+
+CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o: CMakeFiles/ProjectAPI.dir/flags.make
+CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o: ../dijkstra_matrix.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o   -c /mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c
+
+CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c > CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.i
+
+CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c -o CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.s
+
+CMakeFiles/ProjectAPI.dir/heap.c.o: CMakeFiles/ProjectAPI.dir/flags.make
+CMakeFiles/ProjectAPI.dir/heap.c.o: ../heap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ProjectAPI.dir/heap.c.o"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ProjectAPI.dir/heap.c.o   -c /mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c
+
+CMakeFiles/ProjectAPI.dir/heap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ProjectAPI.dir/heap.c.i"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c > CMakeFiles/ProjectAPI.dir/heap.c.i
+
+CMakeFiles/ProjectAPI.dir/heap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ProjectAPI.dir/heap.c.s"
+	/usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c -o CMakeFiles/ProjectAPI.dir/heap.c.s
 
 # Object files for target ProjectAPI
 ProjectAPI_OBJECTS = \
-"CMakeFiles/ProjectAPI.dir/main.c.o"
+"CMakeFiles/ProjectAPI.dir/capture.c.o" \
+"CMakeFiles/ProjectAPI.dir/capture_matrix.c.o" \
+"CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o" \
+"CMakeFiles/ProjectAPI.dir/heap.c.o"
 
 # External object files for target ProjectAPI
 ProjectAPI_EXTERNAL_OBJECTS =
 
-ProjectAPI: CMakeFiles/ProjectAPI.dir/main.c.o
+ProjectAPI: CMakeFiles/ProjectAPI.dir/capture.c.o
+ProjectAPI: CMakeFiles/ProjectAPI.dir/capture_matrix.c.o
+ProjectAPI: CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o
+ProjectAPI: CMakeFiles/ProjectAPI.dir/heap.c.o
 ProjectAPI: CMakeFiles/ProjectAPI.dir/build.make
 ProjectAPI: CMakeFiles/ProjectAPI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ProjectAPI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable ProjectAPI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProjectAPI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
