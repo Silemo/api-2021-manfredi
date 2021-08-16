@@ -131,6 +131,9 @@
 		<Unit filename="D:/MyRepositories/API2021/tosubmit.c">
 			<Option target="full_out"/>
 		</Unit>
+		<Unit filename="D:/MyRepositories/API2021/tosubmit_clear.c">
+			<Option target="test_out"/>
+		</Unit>
 		<Unit filename="D:/MyRepositories/API2021/tutorial.c">
 			<Option target="test_out"/>
 		</Unit>

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/MyRepositories/API2021/graph_ranker.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+stdbool.h
+-
+limits.h
+-
+math.h
+-
+
+D:/MyRepositories/API2021/tosubmit.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+stdbool.h
+-
+limits.h
+-
+math.h
+-
+

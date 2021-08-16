@@ -1,21 +1,9 @@
-//
-// Created by Giovanni Manfredi on 14/08/2021.
-//
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
 #include <math.h>
-
-//#define DBG
-
-#ifdef DBG
-    #define P(fmt, ...) printf(fmt, ##__VA_ARGS__)
-#else
-    #define P(fmt, ...)
-#endif
 
 #define WEIGHT_MAX (long int) INT_MAX + 2
 
@@ -30,8 +18,8 @@ typedef struct Node {
 }Graph;
 
 typedef struct List {
-    data heap_size;   // space currently used by the heap
-    data heap_length; // maximum dimension of the array
+    data heap_size;
+    data heap_length;
     struct Node * heap;
 }Rank;
 
@@ -53,26 +41,12 @@ void heap_extract_max(Rank * top);
 
 void heap_increase_result(Rank * top, data index, data_long result);
 
-//Graph * heap_maximum(Rank * top);
-
-//void heap_build_max(Rank * top);
-
 void heap_max_heapify(Rank * top, data i);
 
 
 int main() {
-    //Opening of the file from which I want to read
-//    FILE *in;
-//    in = fopen("/mnt/d/Giovanni/MyRepositories/API202148/open_tests/input_1.txt","r");
-//    if (in == NULL) {
-//        P("I failed to open the file input_1.txt\n");
-//        return -1;
-//    }
-    //P("I read the file\n");
-    //Reading the first line and extrapolating d and k
     char first_line[30];
     if (getLine(first_line, sizeof(first_line)) == NULL){
-        P("Error in the fgets - first_line\n");
         return -1;
     }
     char const delim1[]=" ";
@@ -81,10 +55,6 @@ int main() {
     data const d = (int) strtol(token,NULL,10);
     token = strtok(NULL,delim1);
     data const k = (int) strtol(token,NULL,10);
-    //while (strtok(NULL,delim1));
-    P("d=%d, k=%d\n", d, k);
-
-    //Reading the second line - 3 options: AggG, TopK or EOF
     data graphRead_count = 0;
     int edgesWeightLineSize = d*11+1;
     char * edgesWeightLine = malloc(edgesWeightLineSize);
@@ -94,13 +64,12 @@ int main() {
     data_long * * graph = NULL;
     Rank * top = NULL;
     data_long weight, result;
-    char bin[sizeof("ggiungiGrafo") + 1]; // This skip could be done with fseek()
+    char bin[sizeof("ggiungiGrafo") + 1];
     while (second_line_firstC != EOF){
-        if(getLine(bin,sizeof("ggiungiGrafo") + 1) == NULL) { // I throw away the rest of the line and the newline char
-            P("Error in throwing away the second line\n");
+        if(getLine(bin,sizeof("ggiungiGrafo") + 1) == NULL) {
             return -1;
         }
-        if (second_line_firstC == (int)'A' && graphRead_count == 0) { // Allocating the graph
+        if (second_line_firstC == (int)'A' && graphRead_count == 0) {
             graph = (data_long * *) malloc(d*sizeof(data_long *));
             for (i = 0; i < d; i++) {
                 graph[i] = (data_long *) malloc(d*sizeof(data_long));
@@ -111,63 +80,32 @@ int main() {
             top->heap = malloc(k*sizeof(struct Node));
         }
         if(second_line_firstC == (int)'A'){
-            //AddG
-            P("AddG read! This is the graph number %d\n",graphRead_count);
             for (i = 0; i < d; ++i) {
-                //P("reading graph %d\n", i);
                 if (getLine(edgesWeightLine, edgesWeightLineSize) == NULL) {
-                    P("Error in the fgets - capture line_line - i = %d\n",i);
                     return -1;
                 }
                 char *l;
                 l = edgesWeightLine;
-                //P("%s", l);
                 for (j = 0; j < d; ++j) {
                     token = strtok(l, comma_delim);
                     l = NULL;
-                    //P("%p\n", token);
                     weight = strtol(token,NULL,10);
                     graph[i][j] = weight;
                 }
             }
             result = paths_Sum(graph,d);
-            P("graphNumber:%d, result:%ld\n",graphRead_count,result);
-            if (top->heap_size < top->heap_length){ // the number of graphs in top is still minor than k
-                P("Still space in heap. size:%d\n",top->heap_size);
+            if (top->heap_size < top->heap_length){
                 heap_insert(top, result, graphRead_count);
-                P("Space in heap updated. size:%d\n",top->heap_size);
             }
-            else{ // the number of graphs in top is equal (or more) than k
+            else{
                 if (top->heap[0].result > result){
-                    P("No more space in heap. let's free size:%d\n",top->heap_size);
                     heap_extract_max(top);
-                    P("I freed one space in heap. Now is size:%d\n",top->heap_size);
                     heap_insert(top, result, graphRead_count);
-                    P("Now the heap is full again. size:%d\n",top->heap_size);
                 }
             }
-#ifdef DBG
-            for (i = 0; i < top->heap_size; i++) {
-                if(i != top->heap_size - 1){
-                    P("%d ",top->heap[i].graphNumber);
-                }
-                else{
-                    P("%d\n",top->heap[i].graphNumber)
-                }
-            }
-#endif
-            //#ifdef DBG
-            //            for (i = 0; i < d; i++) {
-            //                for (j= 0; j < d; j++) {
-            //                    P("%ld ",graph[i][j]);
-            //                }
-            //                P("\n");
-            //            }
-            //#endif
             graphRead_count++;
-        }//AddG ends
+        }
         else if (second_line_firstC == (int)'T') {
-            //TopK
             if (top == NULL){
                 printf("\n");
             }
@@ -181,12 +119,11 @@ int main() {
                     }
                 }
             }
-        }//TopK ends
-        second_line_firstC = (int) getchar_unlocked(); // I update the character
+        }
+        second_line_firstC = (int) getchar_unlocked();
     }
     return 0;
 }
-
 
 data min_Path(data_long const dist[], bool const MST_set[], data const d){
     data_long min = WEIGHT_MAX;
@@ -223,12 +160,9 @@ data_long paths_Sum(data_long ** graph, data const d) {
     data_long dist[d];
     dijkstra(graph, d, dist);
     data_long result = 0;
-    P("This is the heap with the MPT paths\n");
     for (int i = 0; i < d; ++i) {
         result = result + dist[i];
-        P("%ld ",dist[i]);
     }
-    P("\n");
     return result;
 }
 
@@ -263,7 +197,7 @@ void heap_max_heapify(Rank * top, data i){
     top->heap[r].graphNumber > top->heap[maximum].graphNumber))){
         maximum = r;
     }
-    if (maximum != i){ //swap
+    if (maximum != i){
         data_long tmp_result = i_result;
         data tmp_graphNumber = top->heap[i].graphNumber;
         top->heap[i].result = top->heap[maximum].result;
@@ -274,21 +208,11 @@ void heap_max_heapify(Rank * top, data i){
     }
 }
 
-//void heap_build_max(Rank * top){
-//    top->heap_size = top->heap_length;
-//    for (int i = (int) floor((double)((top->heap_length)-1)/2); i < 0; i--) {     //!!!!! Possible problems
-//        heap_max_heapify(top, i);
-//    }
-//}
-
 Graph * heap_maximum(Rank * top){
     return &(top->heap[0]);
 }
 
 void heap_extract_max(Rank * top){
-    if(top->heap_size < 0){
-        P("heap underflow - heap_extract_max\n");
-    }
     top->heap[0].result = top->heap[top->heap_size - 1].result;
     top->heap[0].graphNumber = top->heap[top->heap_size - 1].graphNumber;
     top->heap_size = (top->heap_size) - 1;
@@ -296,14 +220,11 @@ void heap_extract_max(Rank * top){
 }
 
 void heap_increase_result(Rank * top, data index, data_long result){
-    if(result < top->heap[index].result){
-        P("the new result is smaller than the current one - heap_increase_key\n");
-    }
     top->heap[index].result = result;
     data heapParent_index = heap_parent(index);
     while (index > 0 && (top->heap[heapParent_index].result < top->heap[index].result
-                     ||  (top->heap[heapParent_index].result == top->heap[index].result
-                          && top->heap[heapParent_index].graphNumber < top->heap[index].graphNumber))) {
+    ||  (top->heap[heapParent_index].result == top->heap[index].result
+    && top->heap[heapParent_index].graphNumber < top->heap[index].graphNumber))) {
         data_long tmp_result = top->heap[index].result;
         data tmp_graphNumber = top->heap[index].graphNumber;
         top->heap[index].result = top->heap[heapParent_index].result;

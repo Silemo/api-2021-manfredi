@@ -1,0 +1,3 @@
+D:\_Download\CLion-2021.2.win\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\full_out.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\full_out.dir/objects.a @CMakeFiles\full_out.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe  -Wall -Werror -O2 -pipe -static -s -o -g -Wl,--whole-archive CMakeFiles\full_out.dir/objects.a -Wl,--no-whole-archive -o full_out.exe -Wl,--out-implib,libfull_out.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\full_out.dir\linklibs.rsp

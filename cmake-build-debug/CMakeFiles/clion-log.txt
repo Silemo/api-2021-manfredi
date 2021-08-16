@@ -1,0 +1,4 @@
+D:\_Download\CLion-2021.2.win\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" D:\MyRepositories\API2021
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/MyRepositories/API2021/cmake-build-debug

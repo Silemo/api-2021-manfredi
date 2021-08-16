@@ -9,7 +9,7 @@
 #include <limits.h>
 #include <math.h>
 
-//#define DBG
+#define DBG
 
 #ifdef DBG
     #define P(fmt, ...) printf(fmt, ##__VA_ARGS__)
@@ -51,9 +51,9 @@ void heap_insert(Rank * top, data_long result, data graphNumber);
 
 void heap_extract_max(Rank * top);
 
-void heap_increase_result(Rank * top, data index, data_long result);
+void heap_increase_result(Rank * top, data * index_pointer, data_long result);
 
-//Graph * heap_maximum(Rank * top);
+Graph * heap_maximum(Rank * top);
 
 //void heap_build_max(Rank * top);
 
@@ -68,7 +68,7 @@ int main() {
 //        P("I failed to open the file input_1.txt\n");
 //        return -1;
 //    }
-    //P("I read the file\n");
+    P("I read the file\n");
     //Reading the first line and extrapolating d and k
     char first_line[30];
     if (getLine(first_line, sizeof(first_line)) == NULL){
@@ -133,29 +133,19 @@ int main() {
             result = paths_Sum(graph,d);
             P("graphNumber:%d, result:%ld\n",graphRead_count,result);
             if (top->heap_size < top->heap_length){ // the number of graphs in top is still minor than k
-                P("Still space in heap. size:%d\n",top->heap_size);
+                P("Still space in heap. size:%d",top->heap_size);
                 heap_insert(top, result, graphRead_count);
-                P("Space in heap updated. size:%d\n",top->heap_size);
+                P("Space in heap updated. size:%d",top->heap_size);
             }
             else{ // the number of graphs in top is equal (or more) than k
-                if (top->heap[0].result > result){
-                    P("No more space in heap. let's free size:%d\n",top->heap_size);
+                if (heap_maximum(top)[0].result > result){
+                    P("No more space in heap. let's free size:%d",top->heap_size);
                     heap_extract_max(top);
-                    P("I freed one space in heap. Now is size:%d\n",top->heap_size);
+                    P("I freed one space in heap. Now is size:%d",top->heap_size);
                     heap_insert(top, result, graphRead_count);
-                    P("Now the heap is full again. size:%d\n",top->heap_size);
+                    P("Now the heap is full again. size:%d",top->heap_size);
                 }
             }
-#ifdef DBG
-            for (i = 0; i < top->heap_size; i++) {
-                if(i != top->heap_size - 1){
-                    P("%d ",top->heap[i].graphNumber);
-                }
-                else{
-                    P("%d\n",top->heap[i].graphNumber)
-                }
-            }
-#endif
             //#ifdef DBG
             //            for (i = 0; i < d; i++) {
             //                for (j= 0; j < d; j++) {
@@ -289,13 +279,14 @@ void heap_extract_max(Rank * top){
     if(top->heap_size < 0){
         P("heap underflow - heap_extract_max\n");
     }
-    top->heap[0].result = top->heap[top->heap_size - 1].result;
-    top->heap[0].graphNumber = top->heap[top->heap_size - 1].graphNumber;
+    top->heap[0].result = top->heap[top->heap_size].result;
+    top->heap[0].graphNumber = top->heap[top->heap_size].graphNumber;
     top->heap_size = (top->heap_size) - 1;
     heap_max_heapify(top, 0);
 }
 
-void heap_increase_result(Rank * top, data index, data_long result){
+void heap_increase_result(Rank * top, data * index_pointer, data_long result){
+    data index = *index_pointer;
     if(result < top->heap[index].result){
         P("the new result is smaller than the current one - heap_increase_key\n");
     }
@@ -310,13 +301,13 @@ void heap_increase_result(Rank * top, data index, data_long result){
         top->heap[index].graphNumber = top->heap[heapParent_index].graphNumber;
         top->heap[heapParent_index].result = tmp_result;
         top->heap[heapParent_index].graphNumber = tmp_graphNumber;
-        index = heapParent_index;
+        *index_pointer = heapParent_index;
     }
 }
 
 void heap_insert(Rank * top, data_long result, data graphNumber){
     top->heap_size = top->heap_size + 1;
-    top->heap[top->heap_size - 1].result = (data_long) -1;
-    top->heap[top->heap_size - 1].graphNumber = graphNumber;
-    heap_increase_result(top, top->heap_size - 1, result);
+    top->heap[top->heap_size].result = (data_long) -1;
+    top->heap[top->heap_size].graphNumber = graphNumber;
+    heap_increase_result(top, &(top->heap_size), result);
 }

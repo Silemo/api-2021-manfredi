@@ -309,6 +309,30 @@ tosubmit.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\full_out.dir\build.make CMakeFiles/full_out.dir/tosubmit.c.s
 .PHONY : tosubmit.c.s
 
+tosubmit_clear.obj: tosubmit_clear.c.obj
+.PHONY : tosubmit_clear.obj
+
+# target to build an object file
+tosubmit_clear.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_out.dir\build.make CMakeFiles/test_out.dir/tosubmit_clear.c.obj
+.PHONY : tosubmit_clear.c.obj
+
+tosubmit_clear.i: tosubmit_clear.c.i
+.PHONY : tosubmit_clear.i
+
+# target to preprocess a source file
+tosubmit_clear.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_out.dir\build.make CMakeFiles/test_out.dir/tosubmit_clear.c.i
+.PHONY : tosubmit_clear.c.i
+
+tosubmit_clear.s: tosubmit_clear.c.s
+.PHONY : tosubmit_clear.s
+
+# target to generate assembly for a file
+tosubmit_clear.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_out.dir\build.make CMakeFiles/test_out.dir/tosubmit_clear.c.s
+.PHONY : tosubmit_clear.c.s
+
 tutorial.obj: tutorial.c.obj
 .PHONY : tutorial.obj
 
@@ -364,6 +388,9 @@ help:
 	@echo ... tosubmit.obj
 	@echo ... tosubmit.i
 	@echo ... tosubmit.s
+	@echo ... tosubmit_clear.obj
+	@echo ... tosubmit_clear.i
+	@echo ... tosubmit_clear.s
 	@echo ... tutorial.obj
 	@echo ... tutorial.i
 	@echo ... tutorial.s
