@@ -1,1 +1,3 @@
-/usr/bin/gcc -g   CMakeFiles/ProjectAPI.dir/capture.c.o CMakeFiles/ProjectAPI.dir/capture_matrix.c.o CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o CMakeFiles/ProjectAPI.dir/heap.c.o  -o ProjectAPI 
+D:\_Download\CLion-2021.2.win\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\ProjectAPI.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\ProjectAPI.dir/objects.a @CMakeFiles\ProjectAPI.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\ProjectAPI.dir/objects.a -Wl,--no-whole-archive -o ProjectAPI.exe -Wl,--out-implib,libProjectAPI.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ProjectAPI.dir\linklibs.rsp

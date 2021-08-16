@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ProjectAPI.dir/capture.c.o"
-  "CMakeFiles/ProjectAPI.dir/capture_matrix.c.o"
-  "CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o"
-  "CMakeFiles/ProjectAPI.dir/heap.c.o"
-  "ProjectAPI"
+  "CMakeFiles/ProjectAPI.dir/capture.c.obj"
+  "CMakeFiles/ProjectAPI.dir/capture_matrix.c.obj"
+  "CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.obj"
+  "CMakeFiles/ProjectAPI.dir/heap.c.obj"
+  "ProjectAPI.exe"
+  "ProjectAPI.exe.manifest"
   "ProjectAPI.pdb"
+  "libProjectAPI.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

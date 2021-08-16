@@ -1,18 +1,26 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "C"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture.c.o"
-  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/capture_matrix.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture_matrix.c.o"
-  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/dijkstra_matrix.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.o"
-  "/mnt/d/Giovanni/MyRepositories/ProjectAPI/heap.c" "/mnt/d/Giovanni/MyRepositories/ProjectAPI/cmake-build-debug/CMakeFiles/ProjectAPI.dir/heap.c.o"
+  "D:/MyRepositories/API2021/capture.c" "D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture.c.obj"
+  "D:/MyRepositories/API2021/capture_matrix.c" "D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/ProjectAPI.dir/capture_matrix.c.obj"
+  "D:/MyRepositories/API2021/dijkstra_matrix.c" "D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/ProjectAPI.dir/dijkstra_matrix.c.obj"
+  "D:/MyRepositories/API2021/heap.c" "D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/ProjectAPI.dir/heap.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
   )
 
 # Targets to which this target links.
