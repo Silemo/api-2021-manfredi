@@ -70,3 +70,6 @@ cmake-build-debug/*
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Private tests (too big)
+private_tests/*
