@@ -1,45 +1,143 @@
-# ProjectAPI
-Progetto finale del corso di Algoritmi e Strutture Dati. 
-Politecnico di Milano. 
-AA 2020-2021
+# Graph Ranker
 
-SPECIFICHE DI PROGETTO
+## About
 
-GraphRanker
-• L'obiettivo del progetto di quest'anno è la gestione di una classifica tra grafi diretti pesati
-• La classifica tiene traccia dei k "migliori" grafi
-• Il programma da realizzare riceve in ingresso: 
-    - Due parametri, una sola volta (sulla prima riga del file, separati da spazio):
-      -> d: il numero di nodi dei grafi
-      -> k: la lunghezza della classifica
-    - Una sequenza di comandi tra:
-      -> AggiungiGrafo [matrice di adiacenza]
-      -> TopK
-  d, k e il numero di grafi sono rappresentabili con interi a 32 bit.
+Graph Ranker is the final project of **"API-Algorithms and Principles of Informatics"**, course of **"Computer Science & Engineering"** held at Politecnico di Milano (2020/2021).
 
+**Professor** Matteo Pradella
+
+**Tutor** Valentina Deda
+
+**Final Score:** 30/30 cum laude
+
+## Specifications
+
+The objective of the project is the implementation of a **full-C11** program which is capable of managing
+a ranking system of graphs. The program keeps tracks and saves the best *k* graphs (*k* is an input parameter) 
+and once the *TopK* command read outputs the index of all the best graphs the program kept track of.
+
+### Inputs
+
+The program gets two parameters once the program is started (first line of the input_file):
+* *d*  : the number of nodes of each graph
+* *k*  : the length of the ranking the program needs to keep track of
+
+*WARNING* :warning: : *n* and *k* can be represented as 32-bit integers.
+
+The program also gets a sequence of two commands between:
+* *AggiungiGrafo*  : A command followed by a matrix of d*d dimension which asks the program to add the 
+                     graph represented by the matrix to be evaluated (and if it's the case, added in the ranking)
+* *TopK*  : A command which asks the program to consider each graph from the beginning of the file to that 
+            *TopK* command and print the index of the best *K* graphs based on the rules below.
+
+The rules are specified in the specs file you can find [here][specs-link].
+
+### Graph Example
+
+The following text will represent the graph in the image below:
+```
 AggiungiGrafo
-• Richiede di aggiungere un grafo a quelli considerati per stilare la classifica. 
-  È seguito dalla matrice di adiacenza del grafo stesso, stampata una riga per ogni rigo, con gli elementi separati da virgole.
-• I nodi del grafo sono da considerarsi etichettati logicamente con un indice intero tra 0 e d-1; 
-  il nodo in posizione 0 è quello la cui stella uscente è descritta dalla prima riga della matrice.
-• I pesi degli archi del grafo elementi sono interi nell'intervallo [0,2^(32-1)].
-    - Esempio per d=3
-      AggiungiGrafo
-      3,7,42
-      0,7,2
-      7,4,3
+3,7,42
+0,7,2
+7,4,3
+```
 
+[![i1][graph-img]]
+
+### Execution Example
+
+The following text taken as input_file should output the one below:
+
+#### Input
+```
+3,2
+AggiungiGrafo
+0,4,3
+0,2,0
+2,0,0
+AggiungiGrafo
+0,0,2
+7,0,4
+0,1,0
+AggiungiGrafo
+3,1,8
+0,0,5
+0,9,0
 TopK
-• Si consideri ogni grafo dall'inizio del programma fino al comando TopK etichettato 
-  con un indice intero corrispondente al numero di grafi letti prima di esso (partendo da 0)
-• TopK richiede al programma di stampare gli indici interi dei k grafi aventi i k
-  valori più piccoli della seguente metrica:
-    - Somma dei cammini più brevi tra il nodo 0 e tutti gli altri nodi del grafo raggiungibili da 0
-• Se ci sono più grafi con lo stesso valore della metrica, si dà la precedenza ai primi arrivati
-• Le distanze dei nodi non raggiungibili da 0 sono considerate nulle
-• I k indici interi sono stampati, su un unico rigo, separati da uno spazio, in un qualunque ordine
+```
 
+#### Output
+```
+0 1
+```
+or
+```
+1 0
+```
 
-IDEA INIZIALE
+## Test Cases
 
-Rappresentare i grafi tramite vettori di liste di adiacenza, usare l'algoritmo di dijkstra per trovare la somma.
+The program is evaluated by using three sequences of tests.
+
+### UpTo18
+
+| #   |      Outcome       |        Output         | Execution time | Memory used |
+|:----|:------------------:|:---------------------:|:--------------:|:------------|
+| 1   | :white_check_mark: | The output is correct |    1,320 s     | 256 KiB     |
+| 2   | :white_check_mark: | The output is correct |    1,908 s     | 1,45 MiB    |
+| 3   | :white_check_mark: | The output is correct |    1,882 s     | 1,36 MiB    |
+| 4   | :white_check_mark: | The output is correct |    1,823 s     | 1,44 MiB    |
+| 5   | :white_check_mark: | The output is correct |    1,590 s     | 6,10 MiB    |
+| 6   | white_check_mark:  | The output is correct |    1,889 s     | 75,4 MiB    |
+
+### UpTo30
+
+| #   |      Outcome       |        Output         | Execution time | Memory used |
+|:----|:------------------:|:---------------------:|:--------------:|:------------|
+| 1   | :white_check_mark: | The output is correct |    1,294 s     | 356 KiB     |
+| 2   | :white_check_mark: | The output is correct |    1,898 s     | 1,48 MiB    |
+| 3   | :white_check_mark: | The output is correct |    1,895 s     | 1,40 MiB    |
+| 4   | :white_check_mark: | The output is correct |    1,821 s     | 1,48 MiB    |
+| 5   | :white_check_mark: | The output is correct |    1,584 s     | 6,10 MiB    |
+| 6   | white_check_mark:  | The output is correct |    1,900 s     | 75,4 MiB    |
+
+### CumLaude
+
+| #   |      Outcome       |        Output         | Execution time | Memory used |
+|:----|:------------------:|:---------------------:|:--------------:|:------------|
+| 1   | :white_check_mark: | The output is correct |    1,295 s     | 128 KiB     |
+
+### Compilation Output
+
+This is the time and memory space the test server has taken to compile. 
+The time and space occupied is nearly identical for each set of tests.
+
+| #   |      Outcome       | Compilation time | Memory used |
+|:----|:------------------:|:----------------:|:------------|
+| 1   | :white_check_mark: |     0,260 s      | 14.5 MiB    |
+
+## Software used
+
+**CLion** - main IDE
+
+**GitKraken** - github
+
+**OneDrive** - file sharing
+
+### Compiling
+
+**GCC**
+
+**GDB**
+
+### Visualising usage
+
+**Valgrind**
+
+**Callgrind**
+
+**Massif-Visualizer**
+
+<!Links of the document-->
+[specs-link]: https://github.com/Silemo/api-2021-manfredi/tree/main/specs
+[graph-img]: https://github.com/Silemo/api-2021-manfredi/blob/main/github/graph_example.png
