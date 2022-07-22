@@ -1,11 +1,7 @@
-cmake_minimum_required(VERSION 3.16)
-
-project(ProjectAPI C)
-
+cmake_minimum_required(VERSION 3.13)
+project(api-project)
 set(CMAKE_C_STANDARD 11)
-
-set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -O2 -pipe -static -s -o")
-
-add_executable(test_out capture.c capture_matrix.c dijkstra_matrix.c heap.c my_dijkstra.c tutorial.c tosubmit_clear.c)
-
-add_executable(full_out graph_ranker.c graph_ranker.c tosubmit.c)
+set(GCC_COVERAGE_COMPILE_FLAGS "-DEVAL -std=gnu11 -O2 -pipe -static -s -lm")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}")
+add_executable(api-project WIN32 graphRanker.c)
+target_link_libraries(api-project PRIVATE m)
