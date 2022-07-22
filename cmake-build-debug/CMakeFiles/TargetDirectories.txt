@@ -1,4 +1,0 @@
-D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/test_out.dir
-D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/full_out.dir
-D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/MyRepositories/API2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
