@@ -1,5 +1,9 @@
 # Graph Ranker
 
+[![license: MIT][license-img]][license-link]
+![latest commit](https://img.shields.io/github/last-commit/Silemo/api-2021-manfredi)
+
+
 ## About
 
 Graph Ranker is the final project of **"API-Algorithms and Principles of Informatics"**, course of **"Computer Science & Engineering"** held at Politecnico di Milano (2020/2021).
@@ -139,5 +143,8 @@ The time and space occupied is nearly identical for each set of tests.
 **Massif-Visualizer**
 
 <!Links of the document-->
+[license-img]: https://img.shields.io/badge/license-GPL--3.0-blue
+[license-link]: https://github.com/Silemo/api-2021-manfredi/blob/master/LICENSE
 [specs-link]: https://github.com/Silemo/api-2021-manfredi/tree/main/specs
 [graph-img]: https://github.com/Silemo/api-2021-manfredi/blob/main/github/graph_example.png
+
