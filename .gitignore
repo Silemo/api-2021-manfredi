@@ -54,3 +54,19 @@ dkms.conf
 ### Editors ###
 # Clion
 .idea/*
+
+## Build Tools ##
+# CMake
+cmake-build-debug/*
+
+## General ##
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
