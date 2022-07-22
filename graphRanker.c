@@ -9,6 +9,8 @@
 #include <limits.h>
 #include <math.h>
 
+// Debugging utilities
+
 //#define DBG
 
 #ifdef DBG
@@ -17,9 +19,13 @@
     #define P(fmt, ...)
 #endif
 
+// Constants
+
 #define WEIGHT_MAX (long int) INT_MAX + 2
 
 #define getLine(buf, s)    fgets(buf, s, stdin)
+
+// Data structures
 
 typedef int data;
 typedef long int data_long;
@@ -35,15 +41,21 @@ typedef struct List {
     struct Node * heap;
 }Rank;
 
+// Input and parsing functions
+
 data_long power10(data exponent);
 
 void arrayToNum_and_initializeArray(data_long * arrayOfDigits, data numberOfDigits, data_long * result);
+
+// Dijkstra and rank functions
 
 data min_Path(data_long const dist[], bool const MST_set[], data const d);
 
 void dijkstra(data_long ** graph, data const d, data_long dist[]);
 
 void paths_Sum(data_long ** graph, data const d, data_long dist[], data_long * result);
+
+// Heap functions
 
 void heap_insert(Rank * top, data_long result, data graphNumber);
 
@@ -127,16 +139,16 @@ int main() {
                     P("Top replaced!. size:%d\n",top->heap_size);
                 }
             }
-//#ifdef DBG
-//            for (i = 0; i < top->heap_size; i++) {
-//                if(i != top->heap_size - 1){
-//                    P("%d ",top->heap[i].graphNumber);
-//                }
-//                else{
-//                    P("%d\n",top->heap[i].graphNumber);
-//                }
-//            }
-//#endif
+            #ifdef DBG
+            for (i = 0; i < top->heap_size; i++) {
+                if(i != top->heap_size - 1){
+                    P("%d ",top->heap[i].graphNumber);
+                }
+                else{
+                    P("%d\n",top->heap[i].graphNumber);
+                }
+            }
+            #endif
             graphRead_count++;
         }//AddG ends
         else if (second_line_firstC == (int)'T') {
@@ -159,6 +171,8 @@ int main() {
     }
     return 0;
 }
+
+// Input and parsing functions
 
 data_long power10(data exponent){
     if(exponent == 0){
@@ -207,6 +221,7 @@ void arrayToNum_and_initializeArray(data_long * arrayOfDigits, data numberOfDigi
     }
 }
 
+// Dijkstra and rank functions
 
 data min_Path(data_long const dist[], bool const MST_set[], data const d){
     data_long min = WEIGHT_MAX;
@@ -251,6 +266,9 @@ void paths_Sum(data_long ** graph, data const d, data_long dist[], data_long * r
     }
     //P("\n");
 }
+
+// Heap functions
+
 void heap_max_heapify(Rank * top, data i){
     data l = 2*i + 1;
     data r = 2*i + 2;
@@ -277,7 +295,6 @@ void heap_max_heapify(Rank * top, data i){
         heap_max_heapify(top, maximum);
     }
 }
-
 
 void heap_extractAndInsert_max(Rank * top, data_long result, data graphNumber){
     #ifdef DBG
