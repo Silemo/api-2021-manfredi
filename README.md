@@ -42,7 +42,7 @@ AggiungiGrafo
 7,4,3
 ```
 
-[![i1][graph-img]]
+![i1][graph-img]
 
 ### Execution Example
 
@@ -88,7 +88,7 @@ The program is evaluated by using three sequences of tests.
 | 3   | :white_check_mark: | The output is correct |    1,882 s     | 1,36 MiB    |
 | 4   | :white_check_mark: | The output is correct |    1,823 s     | 1,44 MiB    |
 | 5   | :white_check_mark: | The output is correct |    1,590 s     | 6,10 MiB    |
-| 6   | white_check_mark:  | The output is correct |    1,889 s     | 75,4 MiB    |
+| 6   | :white_check_mark:  | The output is correct |    1,889 s     | 75,4 MiB    |
 
 ### UpTo30
 
@@ -99,7 +99,7 @@ The program is evaluated by using three sequences of tests.
 | 3   | :white_check_mark: | The output is correct |    1,895 s     | 1,40 MiB    |
 | 4   | :white_check_mark: | The output is correct |    1,821 s     | 1,48 MiB    |
 | 5   | :white_check_mark: | The output is correct |    1,584 s     | 6,10 MiB    |
-| 6   | white_check_mark:  | The output is correct |    1,900 s     | 75,4 MiB    |
+| 6   | :white_check_mark:  | The output is correct |    1,900 s     | 75,4 MiB    |
 
 ### CumLaude
 
